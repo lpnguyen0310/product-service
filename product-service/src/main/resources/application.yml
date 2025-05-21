@@ -5,13 +5,14 @@ spring:
   application:
     name: product-service
 
-  config:
-    import: "optional:configserver:" # 👈 Bổ sung dòng này để tránh lỗi config server
+  cloud:
+    config:
+      enabled: false
 
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:product_service}
-    username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASSWORD:123456}
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
