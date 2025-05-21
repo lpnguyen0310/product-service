@@ -1,5 +1,5 @@
 server:
-  port: 8080 # Render mặc định dùng 8080, bạn nên đổi thành 8080
+  port: 8080
 
 spring:
   application:
@@ -19,4 +19,4 @@ spring:
     show-sql: true
 
   config:
-    import: optional:configserver:
+    import: "optional:configserver:"
