@@ -1,0 +1,19 @@
+server:
+  port: 8080 # Render mặc định dùng 8080, bạn nên đổi thành 8080
+
+spring:
+  application:
+    name: product-service
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/product_service
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
