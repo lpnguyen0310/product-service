@@ -5,6 +5,9 @@ spring:
   application:
     name: product-service
 
+  config:
+    import: "optional:configserver:" # 👈 Bổ sung dòng này để tránh lỗi config server
+
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:product_service}
     username: ${MYSQL_USER:root}
